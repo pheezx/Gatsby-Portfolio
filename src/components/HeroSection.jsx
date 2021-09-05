@@ -33,20 +33,21 @@ const useStyles = makeStyles((theme) => ({
   heroImage: {
     height: "100%",
     width: "100%",
-    position: "absolute",
-    zIndex: 1, 
-  }
+    zIndex: 1,
+  },
 }));
 
 export default function HeroSection() {
   const styles = useStyles();
   const [shouldShow, setShouldShow] = useState(false);
-  useEffect(() => setShouldShow(true));
+  useEffect(() => setShouldShow(true), []);
   return (
     <Paper className={styles.section}>
       <StaticImage
         className={styles.heroImage}
         src="https://images.unsplash.com/photo-1574610758891-5b809b6e6e2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1512&q=80"
+        alt=""
+        style={{ position: "absolute" }}
       />
       <div className={styles.overlay}></div>
       <Container className={styles.container} maxWidth="md">

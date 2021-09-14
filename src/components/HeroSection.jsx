@@ -63,8 +63,8 @@ export default function HeroSection() {
                 Hi, my name is Pheezx Coding. I'm a software engineer.
               </Typography>
               <Typography variant="h5">
-                I build websites, web application and responsive user
-                interfaces. I create education video content on Youtube.
+                I build websites, web applications and responsive user
+                interfaces. I create educational video content on Youtube.
               </Typography>
               <Box my={2}>
                 <Button

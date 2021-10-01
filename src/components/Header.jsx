@@ -15,9 +15,9 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 
 const navigationLinks = [
-  { name: "About", href: "" },
-  { name: "Projects", href: "" },
-  { name: "Resume", href: "" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Resume", href: "/resume.pdf" },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -52,14 +52,15 @@ export default function Header() {
                 variant="button"
                 underline="none"
                 href={item.href}
+                key={item.name}
               >
                 {item.name}
               </Link>
             ))}
           </Hidden>
           <Hidden smUp>
-            <IconButton>
-              <MenuIcon onClick={() => setOpen(true)} />
+            <IconButton onClick={() => setOpen(true)}>
+              <MenuIcon />
             </IconButton>
           </Hidden>
         </ToolBar>
@@ -70,15 +71,20 @@ export default function Header() {
         onOpen={() => setOpen(true)}
         onClose={() => setOpen(false)}
       >
-        <div>
+        <div
+          onClick={() => setOpen(false)}
+          onKeyPress={() => setOpen(false)}
+          role="button"
+          tabIndex={0}
+        >
           <IconButton>
-            <ChevronRightIcon onClick={() => setOpen(false)} />
+            <ChevronRightIcon />
           </IconButton>
         </div>
         <Divider />
         <List>
           {navigationLinks.map((item) => (
-            <ListItem>
+            <ListItem key={item.name}>
               <Link
                 className={styles.link}
                 color="textPrimary"

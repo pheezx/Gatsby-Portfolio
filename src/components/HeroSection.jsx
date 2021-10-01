@@ -14,6 +14,7 @@ import { StaticImage } from "gatsby-plugin-image";
 const useStyles = makeStyles((theme) => ({
   section: {
     height: "90vh",
+    position: "relative",
   },
   content: {
     height: "100%",
@@ -42,7 +43,7 @@ export default function HeroSection() {
   const [shouldShow, setShouldShow] = useState(false);
   useEffect(() => setShouldShow(true), []);
   return (
-    <Paper className={styles.section}>
+    <Paper className={styles.section} id="about">
       <StaticImage
         className={styles.heroImage}
         src="https://images.unsplash.com/photo-1574610758891-5b809b6e6e2e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1512&q=80"
